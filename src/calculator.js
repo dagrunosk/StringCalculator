@@ -7,6 +7,8 @@ function Add(numbers)
 		return 0;
 	}
 
+	this.number = numbers;
+	numbers = this.number.replace(/(\r\n|\n|\r)/gm, ",");
 	if (numbers.includes(","))
 	{
 		var numberArray = numbers.split(",");
@@ -22,7 +24,7 @@ function Add(numbers)
 
 function Sum(numberArray)
 {
-	var total = 0;
+	var total = 0
 	for (var i = 0; i < numberArray.length; i++)
 	{
 		total += parseInt(numberArray[i]);
