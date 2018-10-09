@@ -11,3 +11,7 @@ it ("should return number when only one number is in the string", () => {
 });
 
 
+it ("should return sum of two given numbers", () => {
+	expect(Add("1,2")).toBe(3);
+});
+

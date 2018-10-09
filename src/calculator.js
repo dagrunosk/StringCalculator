@@ -7,7 +7,16 @@ function Add(numbers)
 		return 0;
 	}
 
-	return parseInt(numbers);
+	if (numbers.includes(","))
+	{
+		var numberArray = numbers.split(",");
+		return parseInt(numberArray[0]) + parseInt(numberArray[1]);
+	}
+	else
+	{
+		return parseInt(numbers);
+	}
+
 }
 
 module.exports = Add;
