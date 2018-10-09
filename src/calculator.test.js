@@ -15,3 +15,6 @@ it ("should return sum of two given numbers", () => {
 	expect(Add("1,2")).toBe(3);
 });
 
+it ("should summerize multiple numbers", () => {
+	expect(Add("1,2,3")).toBe(6);
+});
