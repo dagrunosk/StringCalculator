@@ -24,10 +24,13 @@ it ("should summerize multiple numbers seperated by newline", () => {
 });
 
 
-test("should throw an error on negative numbers and print them out", () => {
+test ("should throw an error on negative numbers and print them out", () => {
 	function NegativeNumbers() {
 		Add ("-1\n2,-3");
 	}
 	expect(NegativeNumbers).toThrowError("Negatives not allowed: -1,-3");
 });
 
+it ("should ignore numbers bigger than 1000", () => {
+	expect(Add("3,1001,1000,2")).toBe(1005);
+});
