@@ -22,3 +22,12 @@ it ("should summerize multiple numbers seperated by comma", () => {
 it ("should summerize multiple numbers seperated by newline", () => {
 	expect(Add("1\n2,3\n4,5")).toBe(15);
 });
+
+
+test("should throw an error on negative numbers and print them out", () => {
+	function NegativeNumbers() {
+		Add ("-1\n2,-3");
+	}
+	expect(NegativeNumbers).toThrowError("Negatives not allowed: -1,-3");
+});
+
