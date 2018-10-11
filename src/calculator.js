@@ -43,7 +43,6 @@ function Sum(numberArray)
 function NegativeNumbers(numberArray)
 {
 	var negativeArray = [];
-	var errorMessage = "Negatives not allowed: ";
 
 	for (var i = 0; i < numberArray.length; i++)
 	{
@@ -54,6 +53,13 @@ function NegativeNumbers(numberArray)
 		}
 	}
 
+	ErrorMessage(negativeArray);
+}
+
+function ErrorMessage(negativeArray)
+{
+	var errorMessage = "Negatives not allowed: ";
+	
 	for (var i = 0; i < negativeArray.length; i++)
 	{
 		errorMessage += negativeArray[i];
@@ -65,6 +71,7 @@ function NegativeNumbers(numberArray)
 	}
 
 	throw errorMessage;
+
 }
 
 module.exports = Add;
