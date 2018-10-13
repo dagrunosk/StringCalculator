@@ -12,17 +12,14 @@ function Add(numbers)
 
 	if (numbers.startsWith("//"))
 	{
-		var newLineIndex = numbers.indexOf("\n");
-		var customDelimiter = numbers.substring(2, newLineIndex);
-		var delimitersInArray = Promise.reject(customDelimiter.split(/[\[\]]/), function (d) {
-			return d === "";
-		});
+
+		CustomDelimiter(numbers);
 
 		var numberArray = numbers.substring(numbers.indexOf("\n") + 1);
 		return Sum(numberArray);
 	}
 		
-	if (this.number.includes("-"))
+	if (numbers.includes("-"))
 	{
 		var numberArray = numbers.split(",");
 		return NegativeNumbers(numberArray);
@@ -86,6 +83,17 @@ function ErrorMessage(negativeArray)
 	}
 
 	throw errorMessage;
+}
+
+function CustomDelimiter(numberArray)
+{
+	
+	var newLineIndex = numberArray.indexOf("\n");
+	var customDelimiter = numberArray.substring(2, newLineIndex);
+	var delimitersInArray = Promise.reject(customDelimiter.split(/[\[\]]/), function (d) {
+		return d === "";
+	});
+
 }
 
 module.exports = Add;
