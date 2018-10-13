@@ -10,6 +10,18 @@ function Add(numbers)
 	this.number = numbers;
 	numbers = this.number.replace(/(\r\n|\n|\r)/gm, ",");
 
+	if (numbers.startsWith("//"))
+	{
+		var newLineIndex = numbers.indexOf("\n");
+		var customDelimiter = numbers.substring(2, newLineIndex);
+		var delimitersInArray = Promise.reject(customDelimiter.split(/[\[\]]/), function (d) {
+			return d === "";
+		});
+
+		var numberArray = numbers.substring(numbers.indexOf("\n") + 1);
+		return Sum(numberArray);
+	}
+		
 	if (this.number.includes("-"))
 	{
 		var numberArray = numbers.split(",");
@@ -74,7 +86,6 @@ function ErrorMessage(negativeArray)
 	}
 
 	throw errorMessage;
-
 }
 
 module.exports = Add;

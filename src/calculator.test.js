@@ -34,3 +34,7 @@ test ("should throw an error on negative numbers and print them out", () => {
 it ("should ignore numbers bigger than 1000", () => {
 	expect(Add("3,1001,1000,2")).toBe(1005);
 });
+
+it ("should handle all delimiters", () => {
+	expect(Add("//=:::\n1=:::2=:::3=:::4")).toBe(10);
+});
